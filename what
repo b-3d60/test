@@ -1,0 +1,18 @@
+emp_Map = zoho.people.getRecords("employee");
+//info emp_Map;
+
+for each rec in emp_Map
+{
+empID = rec.get("EmployeeID");
+//info empID;
+searchMap = Map(); 
+searchMap.put("searchField", "Employee_ID"); 
+searchMap.put("searchOperator", "Is"); 
+searchMap.put("searchText", empID); 
+leave_Map = zoho.people.getRecords("attendance", 0, 100, searchMap);
+info leave_Map ;
+
+}
+
+//salary_Map = zoho.people.getRecords("salary");
+//info salary_Map;
